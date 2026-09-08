@@ -1,0 +1,42 @@
+{
+  "siteName": "Carebot UK",
+  "domain": "https://carebotuk.com",
+  "tagline": "Service robots for UK care homes, hotels, restaurants and retail. Supplied, installed and maintained by UK-based engineers.",
+  "legalName": "CAREBOT UK LTD",
+  "companyNumber": "",
+  "icoRegistration": "",
+  "registeredAddress": {
+    "line1": "17 Nottingham Street",
+    "line2": "Lower Ground",
+    "city": "London",
+    "postcode": "W1U 5EW",
+    "country": "United Kingdom"
+  },
+  "demoFacility": {
+    "name": "Northfleet demonstration facility",
+    "line1": "Memorial Hall, Hall Road",
+    "city": "Northfleet",
+    "county": "Kent",
+    "postcode": "DA11 8AJ",
+    "byAppointment": true,
+    "nearestStation": "Northfleet",
+    "mapEmbedUrl": "https://www.google.com/maps?q=Memorial+Hall,+Hall+Road,+Northfleet,+Kent+DA11+8AJ&output=embed",
+    "mapLinkUrl": "https://www.google.com/maps/search/?api=1&query=Memorial+Hall+Hall+Road+Northfleet+DA11+8AJ"
+  },
+  "phone": "",
+  "email": "hello@carebotuk.com",
+  "linkedin": "https://www.linkedin.com/company/carebot-uk/",
+  "supportCommitment": "UK-based engineers. Response within 24 hours for standard faults.",
+  "manufacturers": [
+    { "slug": "pudu-robotics", "name": "Pudu Robotics", "url": "https://www.pudurobotics.com" },
+    { "slug": "limx-dynamics", "name": "LimX Dynamics", "url": "https://www.limxdynamics.com" },
+    { "slug": "reeman", "name": "Reeman", "url": "https://www.reemanrobot.com" }
+  ],
+  "lease": {
+    "enabled": true,
+    "fromMonthly": "",
+    "minimumTermMonths": null,
+    "supportIncluded": true
+  },
+  "formVersion": "2026-09-v1"
+}

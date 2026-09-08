@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens — Section 6 of the brief. Warm neutrals, one accent.
+   ------------------------------------------------------------------ */
+:root {
+  --ink: #1c1b19;
+  --paper: #ffffff;
+  --mist: #f2f2f0;
+  --stone: #dedddb;
+  --slate: #6b6a66;
+  --accent: #2f5d50;
+  --alert: #b4552a;
+
+  /* Type scale (Bringhurst-style modular scale, ratio ~1.2 / 1.25) */
+  --step--1: 0.875rem;  /* 14 */
+  --step-0: 1rem;       /* 16 */
+  --step-1: 1.125rem;   /* 18 */
+  --step-2: 1.375rem;   /* 22 */
+  --step-3: 1.75rem;    /* 28 */
+  --step-4: 2.25rem;    /* 36 */
+  --step-5: 3rem;       /* 48 */
+  --step-6: 3.75rem;    /* 60 */
+
+  --measure: 65ch;      /* body copy under 75 characters */
+  --radius: 1rem;
+  --radius-sm: 0.625rem;
+  --content-max: 1200px;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-stone: var(--stone);
+  --color-slate: var(--slate);
+  --color-accent: var(--accent);
+  --color-alert: var(--alert);
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --radius-card: var(--radius);
+  --radius-card-sm: var(--radius-sm);
+}
+
+@layer base {
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--step-5); }
+h2 { font-size: var(--step-4); }
+h3 { font-size: var(--step-2); letter-spacing: -0.01em; }
+h4 { font-size: var(--step-1); letter-spacing: 0; }
+
+@media (min-width: 768px) {
+  h1 { font-size: var(--step-6); }
+}
+
+p { max-width: var(--measure); }
+
+a { color: inherit; }
+
+/* Visible keyboard focus, everywhere. */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+}
+
+@layer components {
+/* Prose rendered from markdown bodies */
+.prose {
+  max-width: var(--measure);
+}
+.prose > * + * { margin-top: 1.25em; }
+.prose h2 { font-size: var(--step-3); margin-top: 2.25em; }
+.prose h3 { font-size: var(--step-2); margin-top: 1.75em; }
+.prose h2 + *, .prose h3 + * { margin-top: 0.75em; }
+.prose ul, .prose ol { padding-left: 1.4em; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li + li { margin-top: 0.5em; }
+.prose li > p { margin: 0; }
+.prose strong { font-weight: 600; }
+.prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.prose blockquote {
+  font-family: var(--font-serif);
+  font-size: var(--step-2);
+  line-height: 1.4;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+  color: var(--ink);
+}
+.prose table { width: 100%; border-collapse: collapse; font-size: var(--step--1); }
+.prose th, .prose td { text-align: left; padding: 0.6em 0.75em; border-bottom: 1px solid var(--stone); vertical-align: top; }
+.prose th { font-weight: 600; color: var(--slate); }
+
+/* Hero motion — the one orchestrated moment. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-rise > * {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hero-rise > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-rise > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-rise > *:nth-child(4) { animation-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-rise > * { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* Details/summary used for FAQs and mobile spec groups */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+}
