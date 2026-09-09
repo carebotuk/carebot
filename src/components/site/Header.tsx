@@ -19,7 +19,7 @@ export async function Header() {
         Skip to content
       </a>
       <Container className="flex h-[4.5rem] items-center justify-between gap-6">
-        <Link href="/" className="flex items-center" aria-label="Carebot UK home">
+        <Link href="/" className="flex items-center">
           <Wordmark className="h-6" />
         </Link>
         <Nav items={items} />

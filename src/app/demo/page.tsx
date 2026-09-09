@@ -76,7 +76,7 @@ export default async function DemoPage() {
             </ul>
           </div>
           <div className="aspect-video overflow-hidden rounded-[var(--radius)] bg-ink lg:aspect-auto lg:min-h-80">
-            <VideoLoop src="/video/demo.mp4" poster="/video/poster.jpg" title="A service robot delivering to a table" />
+            <VideoLoop src="/video/demo.mp4" poster="/_next/image?url=%2Fvideo%2Fposter.jpg&w=1200&q=75" title="A service robot delivering to a table" />
           </div>
         </div>
       </Section>

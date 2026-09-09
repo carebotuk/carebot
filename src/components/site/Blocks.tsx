@@ -43,7 +43,7 @@ export function DemoBlock({ band = "ink" }: { band?: "ink" | "mist" }) {
     <Section band={band} ariaLabelledBy="demo-heading">
       <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
         <div className="overflow-hidden rounded-[var(--radius)] bg-ink aspect-video">
-          <VideoLoop src="/video/demo.mp4" poster="/video/poster.jpg" title="A service robot delivering to a table" />
+          <VideoLoop src="/video/demo.mp4" poster="/_next/image?url=%2Fvideo%2Fposter.jpg&w=1200&q=75" title="A service robot delivering to a table" />
         </div>
         <div>
           <p className={`text-(length:--step--1) ${inverse ? "text-stone" : "text-slate"}`}>Demonstration facility, Kent</p>

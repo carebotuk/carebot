@@ -7,7 +7,8 @@ export function pageMetadata({ title, description, path, ogImage, noIndex }: Arg
   const url = absoluteUrl(path);
   const image = ogImage ? absoluteUrl(ogImage) : absoluteUrl("/opengraph-image");
   return {
-    title,
+    // Titles that already carry the site name bypass the layout's "%s | Carebot UK" template.
+    title: title.includes(site.siteName) ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     openGraph: { title, description, url, siteName: site.siteName, type: "website", locale: "en_GB", images: [{ url: image }] },

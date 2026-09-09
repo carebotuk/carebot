@@ -5,8 +5,8 @@ import { useEffect, useRef } from "react";
 type Props = { src: string; poster: string; title: string; className?: string };
 
 /**
- * Poster-first, muted, looping video. Nothing downloads until the poster is
- * on screen, and autoplay is skipped when the visitor prefers reduced motion.
+ * Poster-first, muted, looping video. The file itself is only fetched once the
+ * block scrolls into view, and it never autoplays for reduced-motion visitors.
  */
 export function VideoLoop({ src, poster, title, className = "" }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -14,11 +14,7 @@ export function VideoLoop({ src, poster, title, className = "" }: Props) {
     const v = ref.current;
     if (!v) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      v.removeAttribute("autoplay");
-      v.pause();
-      return;
-    }
+    if (reduce) return;
     const io = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) v.play().catch(() => {});
@@ -38,7 +34,6 @@ export function VideoLoop({ src, poster, title, className = "" }: Props) {
       muted
       loop
       playsInline
-      autoPlay
       controls
       preload="none"
       aria-label={title}
