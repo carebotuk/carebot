@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { getProducts } from "@/lib/content";
 import { localBusinessJsonLd, pageMetadata } from "@/lib/seo";
-import { demoAddress, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import { Section } from "@/components/ui/Section";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { ButtonLink } from "@/components/ui/Button";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
+import { VideoLoop } from "@/components/ui/VideoLoop";
 import { ClosingCta } from "@/components/site/Blocks";
 
 export const metadata: Metadata = pageMetadata({
@@ -74,14 +75,8 @@ export default async function DemoPage() {
               ))}
             </ul>
           </div>
-          <div className="overflow-hidden rounded-[var(--radius)] border border-stone bg-paper">
-            <iframe
-              title={`Map showing ${demoAddress()}`}
-              src={d.mapEmbedUrl}
-              className="h-full min-h-80 w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="aspect-video overflow-hidden rounded-[var(--radius)] bg-ink lg:aspect-auto lg:min-h-80">
+            <VideoLoop src="/video/demo.mp4" poster="/video/poster.jpg" title="A service robot delivering to a table" />
           </div>
         </div>
       </Section>

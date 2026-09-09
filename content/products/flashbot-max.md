@@ -4,7 +4,7 @@ slug: "flashbot-max"
 manufacturer: "pudu-robotics"
 category: "delivery"
 tagline: "Rides the lift. Delivers to the door."
-heroImage: "/images/products/flashbot-max/hero.png"
+heroImage: "/images/products/flashbot-max/hero.webp"
 heroImageAlt: "Pudu FlashBot Max delivery robot with enclosed compartments, on a plain background"
 gallery: []
 videoUrl: ""

@@ -35,7 +35,11 @@ const steps = [
 
 export default async function HomePage() {
   const [products, industries, resources] = await Promise.all([getProducts(), getIndustries(), getResources()]);
-  const hero = resolveImage("/images/home/hero.jpg") ?? resolveImage("/images/home/hero.png");
+  const northfleet = resolveImage("/images/home/hero.jpg") ?? resolveImage("/images/home/hero.png");
+  const hero = northfleet ?? resolveImage("/images/products/flashbot-max/hero.webp");
+  const heroAlt = northfleet
+    ? "A delivery robot working in a care home corridor, with a member of staff walking past"
+    : "FlashBot Max delivery robot with its two compartments open, loaded with towels and toiletries";
   return (
     <>
       <JsonLd data={websiteJsonLd()} />
@@ -57,7 +61,7 @@ export default async function HomePage() {
             </div>
             <ImageFrame
               src={hero}
-              alt="A delivery robot working in a care home corridor, with a member of staff walking past"
+              alt={heroAlt}
               aspect="portrait"
               priority
               sizes="(min-width: 1024px) 45vw, 100vw"

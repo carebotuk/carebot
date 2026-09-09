@@ -2,6 +2,7 @@ import Link from "next/link";
 import { demoAddress, site } from "@/lib/site";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
+import { VideoLoop } from "@/components/ui/VideoLoop";
 
 /** The 24-hour UK response commitment. Appears on home, every product page and the footer. */
 export function SupportStrip() {
@@ -40,7 +41,10 @@ export function DemoBlock({ band = "ink" }: { band?: "ink" | "mist" }) {
   const inverse = band === "ink";
   return (
     <Section band={band} ariaLabelledBy="demo-heading">
-      <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+      <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div className="overflow-hidden rounded-[var(--radius)] bg-ink aspect-video">
+          <VideoLoop src="/video/demo.mp4" poster="/video/poster.jpg" title="A service robot delivering to a table" />
+        </div>
         <div>
           <p className={`text-(length:--step--1) ${inverse ? "text-stone" : "text-slate"}`}>Demonstration facility, Kent</p>
           <h2 id="demo-heading" className="mt-3">See a robot working before you decide.</h2>
@@ -48,10 +52,10 @@ export function DemoBlock({ band = "ink" }: { band?: "ink" | "mist" }) {
             Two robots on site at {d.line1}, {d.city}, that you can operate yourself. Forty-five minutes, {d.byAppointment ? "by appointment" : "open weekdays"}. Bring your corridor measurements and we will run the robot through a scenario like yours.
           </p>
           <p className={`mt-4 ${inverse ? "text-paper/85" : "text-slate"}`}>Or we will come to you for a site survey.</p>
-        </div>
-        <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-          <ButtonLink href="/demo" variant={inverse ? "inverse" : "primary"}>Book a demo</ButtonLink>
-          <ButtonLink href="/contact?enquiry=survey" variant={inverse ? "inverse" : "secondary"}>Request a site survey</ButtonLink>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <ButtonLink href="/demo" variant={inverse ? "inverse" : "primary"}>Book a demo</ButtonLink>
+            <ButtonLink href="/contact?enquiry=survey" variant={inverse ? "inverse" : "secondary"}>Request a site survey</ButtonLink>
+          </div>
         </div>
       </div>
       <p className={`mt-10 text-(length:--step--1) ${inverse ? "text-stone" : "text-slate"}`}>
