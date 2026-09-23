@@ -13,7 +13,7 @@ const typeLabel: Record<Resource["resourceType"], string> = {
 
 export function ResourceCard({ resource }: { resource: Resource }) {
   return (
-    <Link href={`/resources/${resource.slug}`} className="group flex h-full flex-col rounded-[var(--radius)] border border-stone bg-paper p-6 transition-colors hover:border-ink">
+    <Link href={`/resources/${resource.slug}`} className="group flex h-full flex-col rounded-3xl border border-stone bg-paper p-6 transition-colors hover:border-accent hover:bg-sage">
       <div className="flex flex-wrap gap-2">
         <Chip>{typeLabel[resource.resourceType]}</Chip>
         {resource.status === "coming-soon" ? <Chip tone="accent">Coming soon</Chip> : null}

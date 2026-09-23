@@ -3,24 +3,24 @@ name: "FlashBot Max"
 slug: "flashbot-max"
 manufacturer: "pudu-robotics"
 category: "delivery"
-tagline: "Rides the lift. Delivers to the door."
+tagline: "Linen, supplies and guest essentials. Delivered between floors."
 heroImage: "/images/products/flashbot-max/hero.webp"
 heroImageAlt: "Pudu FlashBot Max delivery robot with enclosed compartments, on a plain background"
 gallery: []
 videoUrl: ""
-shortDescription: "A multi-floor delivery robot with secure, enclosed compartments. Calls the lift itself, navigates around people, and hands over only to the right person."
+shortDescription: "An enclosed delivery robot for care homes and hotels. Carry linen, supplies and guest essentials along mapped routes, with lift integration assessed for your building."
 keyBenefits:
-  - title: "Genuinely multi-floor"
-    description: "Cloud or hardware lift integration, so in most buildings no lift modification is required."
+  - title: "Fewer trips between floors"
+    description: "Use the robot for repeat deliveries between stores, floors and rooms, with lift integration where compatible."
     icon: "lift"
-  - title: "Secure handover"
-    description: "Compartments unlock by PIN, phone number or NFC. Nothing is left in a corridor."
+  - title: "Enclosed deliveries"
+    description: "Carry items in compartments with controlled access at the destination. We confirm the handover setup with you."
     icon: "lock"
-  - title: "Full shift, unattended"
-    description: "Returns to its dock and charges itself between runs."
+  - title: "Charging built into the routine"
+    description: "Automatic return-to-dock charging helps you plan deliveries around the working day."
     icon: "battery"
-  - title: "Handles real buildings"
-    description: "VSLAM+ with LiDAR copes with variable lighting, thresholds and covered outdoor walkways."
+  - title: "Routes planned for your premises"
+    description: "We assess corridors, doors, floor surfaces and shared spaces before agreeing where the robot will operate."
     icon: "route"
 specsStatus: "indicative"
 specsSource: ""
@@ -78,23 +78,25 @@ options:
   - name: "UV germicidal lamp"
     values: ["Yes", "No"]
     note: "Availability to be confirmed with Pudu."
-industries: ["care-homes", "hotels"]
+industries: ["care-homes", "hospitals", "hotels"]
 useCases:
-  - title: "Linen and supplies between floors"
-    description: "Load at the store, select the floor, and the robot calls the lift and delivers to the unit, releasing to a PIN or tap."
-  - title: "Consumables and stock replenishment"
-    description: "Scheduled runs from central stores to nursing stations, so nobody walks a trolley round at handover."
-  - title: "Out-of-hours amenity delivery"
-    description: "In hotels, guest requests are delivered to the room door without the night porter leaving the desk."
+  - title: "Linen and supplies in care homes"
+    description: "Carry replenishment loads from a store to an agreed delivery point on another floor. Staff load and receive the items."
+  - title: "Guest essentials in hotels"
+    description: "Send towels and toiletries to guest-room delivery points, reducing the need for a member of staff to accompany every trip."
+  - title: "Repeat deliveries between departments"
+    description: "Use mapped routes for regular supply runs. We assess the loads, handover points and frequency with your team."
 availability: "both"
 datasheet: ""
 faqs:
-  - question: "Does the lift need modifying?"
-    answer: "In most buildings, no. FlashBot Max can integrate with the lift through the cloud or with a small hardware module, depending on the lift brand and controller. We confirm the approach during the site survey."
-  - question: "What happens if someone is in the corridor?"
-    answer: "The robot slows and yields, then continues when the path is clear. Speed is capped and routes avoid high-risk areas we identify with you during the survey."
-  - question: "Who fixes it if it stops working?"
-    answer: "Our UK-based engineer. We respond within 24 hours for standard faults, and we hold spare parts in the UK."
+  - question: "Will it work with our lift?"
+    answer: "That depends on the lift and its control system. We assess compatibility and the integration required during the site survey, before confirming a multi-floor installation."
+  - question: "Does someone still need to load it?"
+    answer: "Yes. Your team loads the compartments and someone receives the items at the destination. The robot handles the journey along its configured route."
+  - question: "Can it travel through busy corridors?"
+    answer: "It is designed to navigate around people, but suitability depends on the space and how it is used. We assess clearances, doors and shared areas with your team and agree suitable routes."
+  - question: "What happens if it stops working?"
+    answer: "Contact Carebot UK for support. We provide a UK engineer response within 24 hours for standard faults. Hours of cover, emergency arrangements and support terms are confirmed in your quotation."
 seo:
   title: "FlashBot Max UK | Multi-floor delivery robot for care homes and hotels"
   description: "FlashBot Max from Pudu Robotics, supplied, installed and supported in the UK by Carebot UK. Multi-floor delivery with secure compartments. Book a demo in Kent."
@@ -102,8 +104,20 @@ status: "available"
 displayOrder: 1
 ---
 
-FlashBot Max moves items between floors without anyone carrying them. It calls the lift itself, navigates corridors around people, and releases its load only to the right person via PIN, phone number or NFC tap.
+## For the deliveries that keep taking someone away
 
-In a care home it moves linen, supplies and consumables between floors and stores. In a hotel it runs amenities to the room door. The point is not novelty. It is the several hours a day your team currently spends walking instead of caring.
+A request for towels. Linen needed upstairs. Supplies running low on another floor. Each job is straightforward, but each journey takes a member of staff away from the people they are there to support.
 
-We survey every building before we quote. Corridor widths, lift access, thresholds and floor surfaces all matter, and we would rather tell you it will not work than install something that does not.
+FlashBot Max is Pudu Robotics’ enclosed delivery robot. Your team loads the compartments, selects a destination and receives the items at the other end. On a compatible, configured route, the robot can use the lift to travel between floors.
+
+## Is this the right robot for you?
+
+Consider FlashBot Max if you have regular deliveries between rooms, departments or floors and want to carry items in enclosed compartments. It is especially relevant to hotel amenities and care-home linen or supply runs.
+
+The useful starting point is one repeat journey: what goes on it, how often it happens and who currently makes the trip. We will assess the route, load, lift and handover arrangements with you.
+
+## What Carebot UK does
+
+We assess your premises, specify the configuration, install and map the robot, and train your team to use it. You can buy or lease, with the equipment, integration and support terms set out in your quotation.
+
+[Book a FlashBot Max demonstration](/demo?product=flashbot-max) or [tell us about your delivery route](/contact?enquiry=survey&product=flashbot-max).

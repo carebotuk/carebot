@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const INDUSTRY_OPTIONS = [
   { value: "care-homes", label: "Care home" },
+  { value: "hospitals", label: "Hospital" },
   { value: "hotels", label: "Hotel" },
   { value: "restaurants", label: "Restaurant or hospitality" },
   { value: "retail", label: "Retail" },
@@ -24,7 +25,7 @@ export const enquirySchema = z.object({
   email: z.string().trim().email("Please enter a work email address").max(200),
   company: z.string().trim().min(1, "Please enter your organisation").max(160),
   role: z.string().trim().min(1, "Please enter your role").max(120),
-  industry: z.enum(["care-homes", "hotels", "restaurants", "retail", "other"]),
+  industry: z.enum(["care-homes", "hospitals", "hotels", "restaurants", "retail", "other"]),
   product: z.string().trim().max(80).optional().or(z.literal("")),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
   message: z.string().trim().max(3000).optional().or(z.literal("")),
@@ -40,7 +41,7 @@ export const resourceRequestSchema = z.object({
   email: z.string().trim().email("Please enter a work email address").max(200),
   company: z.string().trim().min(1, "Please enter your organisation").max(160),
   role: z.string().trim().min(1, "Please enter your role").max(120),
-  industry: z.enum(["care-homes", "hotels", "restaurants", "retail", "other"]),
+  industry: z.enum(["care-homes", "hospitals", "hotels", "restaurants", "retail", "other"]),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
   marketingConsent: z.boolean(),
   website: z.string().max(0).optional(),

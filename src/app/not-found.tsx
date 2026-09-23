@@ -3,7 +3,7 @@ import { ButtonLink } from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <Section band="paper">
+    <Section band="sage">
       <div className="max-w-2xl">
         <p className="text-slate">404</p>
         <h1 className="mt-3">That page has moved or never existed.</h1>

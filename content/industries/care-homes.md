@@ -2,8 +2,8 @@
 name: "Care homes"
 slug: "care-homes"
 shortName: "Care homes"
-headline: "Give your carers back the hours they spend walking."
-intro: "Delivery and service robots that take internal transport off your care team, installed and supported by UK-based engineers who understand a regulated setting."
+headline: "More time with residents. Fewer trips for supplies."
+intro: "Linen runs and meal deliveries take staff away from residents. Carebot UK supplies and supports robots to help with the carrying, with routes and working practices assessed around your home."
 heroImage: ""
 heroImageAlt: ""
 recommendedProducts: ["flashbot-max", "kettybot-pro"]
@@ -11,48 +11,43 @@ outcomes: []
 relatedCaseStudies: []
 gatedResource: "care-homes-guide"
 faqs:
-  - question: "Will a robot work in our building?"
-    answer: "Often, but not always. We survey first, measuring corridor widths, lift access, thresholds and floor surfaces, and we tell you honestly if it will not work before you spend anything."
-  - question: "How do residents with dementia respond to a robot?"
-    answer: "Deployments are planned around this. Routes avoid high-risk areas, speed is capped, and the robot yields to people. We survey for this specifically and discuss it with your registered manager before installation."
-  - question: "Does this affect our CQC registration or inspection?"
-    answer: "Internal logistics is not a regulated activity. You will want the change reflected in your policies and evidenced as increased resident-facing time. We can share what other operators have documented, but your compliance lead should review it."
-  - question: "What does it cost?"
-    answer: "Outright purchase or a monthly lease that includes support. Most care operators start with a lease on one unit. We will give you a written quotation after the site survey."
-  - question: "Who supports it?"
-    answer: "Carebot UK employs a full-time robotics engineer in the UK. Standard faults get a response within 24 hours, and we hold spare parts here."
+  - question: "Which robot should we look at first?"
+    answer: "FlashBot Max is the starting point for enclosed linen and supply deliveries, including between floors where lift integration is possible. KettyBot Pro is suited to carrying trays in dining rooms. We will help you choose based on the task and your layout."
+  - question: "What about residents who need extra support?"
+    answer: "We discuss shared spaces, mobility aids and residents’ needs with your management team during the assessment. Suitable routes, supervision and operating procedures need to be agreed for your home before deployment."
+  - question: "What should our management team review?"
+    answer: "Include the proposed tasks, routes, cleaning routines, staff responsibilities and arrangements when the robot is unavailable in your own operational review. We provide product and deployment information to support that discussion."
+  - question: "Can we lease a robot?"
+    answer: "Yes. Purchase and lease options are available. We confirm the robot, installation requirements, support and terms in writing after assessing your home."
+  - question: "Who trains and supports our staff?"
+    answer: "Carebot UK handles on-site training and ongoing UK engineering support. We respond within 24 hours for standard faults; hours of cover and emergency arrangements are agreed at quotation."
 seo:
   title: "Delivery robots for care homes UK | Carebot UK"
-  description: "Service robots for UK care homes. Take linen, supplies and meal runs off your care team. Site survey, installation, training and 24-hour UK support from Carebot UK."
+  description: "Compare delivery and dining-room robots for care homes. Help with linen, supplies and meal transport, with site assessment, staff training and UK support."
 status: "live"
 displayOrder: 1
 ---
 
-## The problem
+## Start with the trips your team makes every day
 
-In a typical 60-bed home, care staff spend a meaningful part of every shift moving things rather than caring. Linen to floors, meal trays, supplies from stores, waste out. Every trip is time not spent with a resident, in a sector running persistent vacancy rates and paying agency premiums to cover the gaps.
+When someone leaves a unit to fetch linen, replenish supplies or carry meal trays, the journey takes them away from residents. If the same trips happen throughout the day, they are worth looking at.
 
-The headcount budget is flat. Wage cost is not. The only lever left is what the people you already have spend their time on.
+We help you assess which of those journeys a robot could handle. Your team remains responsible for care, loading and receiving deliveries, and deciding how the robot fits into the home’s routines.
 
-## How robotics helps
+## Two robots. Two different jobs.
 
-Not by replacing carers. By removing internal transport that does not require a human being.
+**FlashBot Max: linen and supply deliveries.** Enclosed compartments carry items along mapped routes. Where lift integration is compatible, it can move between floors. Consider it for regular trips from central stores to agreed delivery points.
 
-A delivery robot running linen and supplies between floors frees a carer for resident-facing time. That is the thing you are inspected on, and the thing your staff came into the job to do. A service robot in the dining room runs plates and clears tables so the people at the meal are watching residents eat, not walking to the hatch.
+**KettyBot Pro: help in the dining room.** Open trays carry dishes between the kitchen and service points. Staff load and unload it, serve meals and help residents eat. It supports the carrying involved in service.
 
-The robots themselves are proven. Pudu's units are deployed in hotels, restaurants and healthcare settings in dozens of countries. What is new is a UK partner who will install one in a care home properly and stand behind it.
+## Planned around your residents and your building
 
-## What deployment looks like in a care setting
+We walk the proposed routes with your team and check corridors, doors, lifts, floor surfaces, wifi and charging space. We also discuss how residents use those spaces, where extra supervision may be needed and how deliveries will be received.
 
-This is the part that matters, and the part most suppliers skip.
+Your managers help agree the operating and cleaning routines. We train the people using the robot and plan what happens if a route is blocked or the robot is unavailable.
 
-- **Residents with dementia or mobility aids.** Route planning avoids high-risk areas, speed is capped, and the robot yields to people. We survey for this specifically and agree the routes with your registered manager.
-- **Infection control.** Enclosed compartments and wipe-down surfaces on delivery units. UV-equipped variants are to be confirmed with the manufacturer; we will not claim them until they are.
-- **CQC and inspection.** Internal logistics is not a regulated activity, but you will want the change reflected in your policies and evidenced as increased resident-facing time. Your compliance lead should review the wording; we will not overstate it.
-- **Staff acceptance.** The deployment fails if staff think the robot is there to replace them. Our training addresses this directly, and the robot is introduced as taking the walking, not the caring.
-- **Night operation.** Quiet-mode routing and reduced speed overnight, with routes that keep clear of bedrooms where you tell us to.
-- **Wifi and charging.** We check coverage on every route and agree a dock location that is out of the way and near a socket.
+## See whether it would earn its place
 
-## What we will not claim
+Choose one task you would like help with. Tell us how often it happens, what is carried and which staff make the journey. We can demonstrate the relevant robot at Northfleet and assess whether a site survey is the right next step.
 
-We have no UK care home deployment to cite yet, and we will not invent one. You will not find a "reduces staff costs by 40%" line on this page. What we can do is put a robot in front of you at our Kent facility, run it through a scenario like yours, and give you an honest written assessment of your building.
+[Talk to us about your home](/contact?enquiry=survey&industry=care-homes). You do not need to choose a model before contacting us.

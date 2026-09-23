@@ -11,7 +11,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { Stat } from "@/components/ui/Stat";
 import { ProductCard } from "@/components/site/ProductCard";
 import { ResourceCard } from "@/components/site/ResourceCard";
-import { ClosingCta, DemoBlock } from "@/components/site/Blocks";
+import { DemoBlock } from "@/components/site/Blocks";
 
 export async function generateStaticParams() {
   return (await getIndustries()).map((i) => ({ slug: i.slug }));
@@ -57,20 +57,20 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
   return (
     <>
       {jsonLd.map((d, i) => <JsonLd key={i} data={d} />)}
-      <Section band="paper">
+      <Section band="sage">
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Industries", href: "/industries" }, { name: industry.name, href: `/industries/${industry.slug}` }]} />
         <div className="mt-8 max-w-3xl">
-          <p className="text-slate">{industry.name}</p>
+          <p className="text-sm font-medium text-accent">{industry.name}</p>
           <h1 className="mt-3">{industry.headline}</h1>
           <p className="mt-6 text-(length:--step-1) text-slate">{industry.intro}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href={`/contact?enquiry=survey&industry=${industry.slug}`}>Book a site survey</ButtonLink>
-            <ButtonLink href="/demo" variant="secondary">Visit Northfleet</ButtonLink>
+            <ButtonLink href="/demo" variant="secondary">See a robot in action</ButtonLink>
           </div>
         </div>
       </Section>
 
-      <Section band="mist">
+      <Section band="paper">
         <div className="prose" dangerouslySetInnerHTML={{ __html: industry.html }} />
       </Section>
 
@@ -93,7 +93,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
       ) : null}
 
       <Section band="mist" ariaLabelledBy="evidence-heading">
-        <h2 id="evidence-heading" className="mb-4">{related.length ? "Case studies" : "Before the case studies"}</h2>
+        <h2 id="evidence-heading" className="mb-4">{related.length ? "Case studies" : "Plan your deployment"}</h2>
         {related.length ? (
           <ul className="grid gap-6 md:grid-cols-2">
             {related.map((c) => (
@@ -106,7 +106,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
         ) : (
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
             <p className="max-w-xl text-slate">
-              We are new, and we will not publish a case study until there is a real UK deployment behind it. In the meantime we have written a guide for the person weighing this up, and we will put a robot in front of you in Kent.
+              Tell us about one journey your staff make repeatedly: what they carry, where they go and when it gets busy. We will help you assess a suitable robot and the practical next steps.
             </p>
             {resource ? <ResourceCard resource={resource} /> : null}
           </div>
@@ -116,7 +116,6 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
       {industry.faqs.length ? <Section band="paper"><Faq items={industry.faqs} /></Section> : null}
 
       <DemoBlock />
-      <ClosingCta />
     </>
   );
 }

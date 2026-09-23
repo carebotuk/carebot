@@ -1,8 +1,8 @@
 ---
 name: "Route mapping and environment configuration"
 slug: "route-mapping"
-summary: "Lift integration, door integration, no-go zones, speed caps and dock placement."
+summary: "Set the destinations, routes and operating areas your team will use."
 displayOrder: 4
 ---
 
-We map your building, configure routes and destinations, integrate with the lift and any automatic doors, set no-go zones and speed limits by area, and place the charging dock where it is out of the way. Everything is agreed with your manager before the robot goes live.
+We map delivery points and configure suitable routes, speed settings and areas to avoid. Where the selected robot and building support it, we scope lift or automatic-door integration. Your manager agrees the setup before the robot goes into use.

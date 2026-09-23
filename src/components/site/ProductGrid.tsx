@@ -44,7 +44,7 @@ function Grid({ items, industries, initialIndustry = "all" }: Props) {
               type="button"
               aria-pressed={active}
               onClick={() => setIndustry(i.slug)}
-              className={`rounded-full border px-4 py-2 text-(length:--step--1) transition-colors ${active ? "border-ink bg-ink text-paper" : "border-stone hover:border-ink"}`}
+              className={`rounded-full border px-4 py-2 text-(length:--step--1) transition-colors ${active ? "border-accent bg-accent text-paper" : "border-stone bg-paper hover:border-accent"}`}
             >
               {i.name}
             </button>
@@ -52,7 +52,7 @@ function Grid({ items, industries, initialIndustry = "all" }: Props) {
         })}
       </div>
       {visible.length ? (
-        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
           {visible.map((p) => <li key={p.slug}>{p.card}</li>)}
         </ul>
       ) : (

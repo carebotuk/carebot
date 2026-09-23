@@ -1,8 +1,8 @@
 ---
 name: "Software updates and fleet management"
 slug: "software"
-summary: "Manufacturer updates applied and tested by us, with fleet management set up for you."
+summary: "Keep the robot’s software maintained as part of ongoing support."
 displayOrder: 7
 ---
 
-We apply and test manufacturer software updates, manage the fleet software account on your behalf, and keep a record of what version each unit is running.
+We apply and test manufacturer updates and manage the fleet software account on your behalf. We keep a record of the version each unit is running so your support history stays clear.

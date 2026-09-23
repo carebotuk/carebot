@@ -4,8 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { Section } from "@/components/ui/Section";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { PullQuote } from "@/components/ui/PullQuote";
-import { ClosingCta, DemoBlock, SupportStrip } from "@/components/site/Blocks";
+import { DemoBlock, SupportStrip } from "@/components/site/Blocks";
 
 export const metadata: Metadata = pageMetadata({
   title: "Robot installation and support UK | Implementation and after-sales",
@@ -17,22 +16,23 @@ export default async function ServicesPage() {
   const services = await getServices();
   return (
     <>
-      <Section band="paper">
+      <Section band="sage">
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
         <div className="mt-8 max-w-3xl">
-          <h1>What happens after it arrives.</h1>
+          <p className="mb-4 text-sm font-medium text-accent">From first survey to everyday support</p>
+          <h1>We get your robot working. And help you keep it working.</h1>
           <p className="mt-6 text-(length:--step-1) text-slate">
-            Anyone can list a robot. The question a care operator actually has is what happens after it is delivered, and who fixes it at seven on a Tuesday morning. This is our answer.
+            Buying the robot is one part of the decision. You also need suitable routes, trained staff and reliable help when something interrupts service. Carebot UK handles the assessment, installation and ongoing support.
           </p>
         </div>
       </Section>
 
       <Section band="mist">
-        <ol className="max-w-3xl divide-y divide-stone border-y border-stone">
+        <ol className="grid gap-6 lg:grid-cols-2">
           {services.map((s, i) => (
-            <li key={s.slug} id={s.slug} className="scroll-mt-24 py-8">
+            <li key={s.slug} id={s.slug} className="scroll-mt-24 rounded-3xl border border-stone bg-paper p-6 sm:p-8">
               <div className="grid gap-4 sm:grid-cols-[3rem_1fr]">
-                <span className="font-serif text-(length:--step-3) leading-none text-accent">{i + 1}</span>
+                <span className="text-sm font-medium text-accent">{i + 1}</span>
                 <div>
                   <h2 className="text-(length:--step-2)">{s.name}</h2>
                   <p className="mt-2 font-medium">{s.summary}</p>
@@ -46,7 +46,7 @@ export default async function ServicesPage() {
 
       <Section band="paper">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <PullQuote quote="We would rather tell you it will not work in your building than install something that does not." />
+          <div><h2 className="text-(length:--step-3)">Know what you are buying.</h2><p className="mt-4 text-slate">Your quotation sets out the recommended robot, installation work and support terms. We explain what your team needs to do and any building changes required before you decide.</p></div>
           <div>
             <h2 className="text-(length:--step-3)">The support commitment</h2>
             <p className="mt-4 text-slate">{site.supportCommitment} Emergency response is prioritised. The definition of an emergency, hours of cover and spare parts holding are set out in writing at quotation, so there is no ambiguity later.</p>
@@ -56,7 +56,6 @@ export default async function ServicesPage() {
       </Section>
 
       <DemoBlock />
-      <ClosingCta />
     </>
   );
 }

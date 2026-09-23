@@ -1,8 +1,8 @@
 ---
 name: "Staff training and change management"
 slug: "training"
-summary: "The deployment fails if staff think the robot is there to replace them. We address that directly."
+summary: "Help your team use the robot confidently from the start."
 displayOrder: 5
 ---
 
-We train the people who will load, dispatch and recover the robot, and we talk to the wider team about what it is for. The robot takes the walking, not the caring. Training is on site and takes about an hour for operators, with written guides left behind.
+We train staff to load and dispatch the robot, receive deliveries and deal with common interruptions. We explain which tasks the robot handles and which remain with your people. On-site training and written guidance help your team build it into their routine.

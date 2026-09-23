@@ -3,7 +3,7 @@ title: "Robotics in UK care homes: an operations director's guide"
 slug: "care-homes-guide"
 resourceType: "guide"
 industry: "care-homes"
-summary: "What service robots can and cannot do in a care setting, a deployment checklist, the questions to ask any supplier, and an honest section on what goes wrong."
+summary: "A guide in preparation for care-home owners and managers: compare delivery and dining-room robots, assess your building and plan the questions to ask a supplier."
 coverImage: ""
 isGated: true
 asset: ""
@@ -15,16 +15,18 @@ seo:
   description: "A practical guide for care home operations directors and registered managers on delivery and service robots. What works, what does not, and what to ask a supplier."
 ---
 
-## What is in the guide
+## Make an informed first decision
 
-This is not a brochure. It is written for the operations director or registered manager who has been asked "should we look at robots" and needs a straight answer.
+You do not need to be a robotics expert to assess whether a robot could help your home. This guide is being prepared for owners, operations directors and registered managers who want to understand the practical choices.
 
-- **Sector context.** Where service robots are already working in care and healthcare settings, and where they are not.
-- **What the technology can and cannot do.** Internal transport, dining service and reception, and the things it is not good at.
-- **A deployment checklist.** Corridor widths, lift specs, floor surfaces, wifi and charging locations, so you can assess your own building before you speak to anyone.
-- **Questions to ask any supplier.** Including ours.
-- **What goes wrong.** Staff acceptance, route planning around residents with dementia, and the support gap when the supplier is overseas.
+It will cover:
 
-## Who it is for
+- The difference between enclosed delivery robots and tray-service robots.
+- Tasks to assess first, from linen runs to dining-room deliveries.
+- Building considerations: corridors, lifts, floor surfaces, wifi and charging.
+- Staff responsibilities, resident needs and operating routines to discuss with your team.
+- Questions about purchase, lease, training and ongoing support.
 
-Care home group operations directors, registered managers and owner-operators. No technical background assumed.
+## Want to discuss your home now?
+
+[Send us the task you have in mind](/contact?industry=care-homes). We can help you identify the relevant robot and whether a demonstration or site assessment would be useful.

@@ -20,7 +20,7 @@ type Props = {
 };
 
 const TYPES = new Set(["demo", "survey", "pricing", "general"]);
-const INDUSTRIES = new Set(["care-homes", "hotels", "restaurants", "retail", "other"]);
+const INDUSTRIES = new Set(["care-homes", "hospitals", "hotels", "restaurants", "retail", "other"]);
 
 export function EnquiryForm(props: Props) {
   if (!props.readQuery) return <Form {...props} />;
@@ -95,7 +95,7 @@ function Form({ products, defaultType = "general", defaultProduct = "", defaultI
           <Input id="company" autoComplete="organization" {...register("company")} error={errors.company?.message} />
         </Field>
         <Field id="role" label="Your role" error={errors.role?.message}>
-          <Input id="role" autoComplete="organization-title" placeholder="e.g. Registered manager" {...register("role")} error={errors.role?.message} />
+          <Input id="role" autoComplete="organization-title" placeholder="e.g. Owner or operations manager" {...register("role")} error={errors.role?.message} />
         </Field>
         <Field id="industry" label="Sector" error={errors.industry?.message}>
           <Select id="industry" {...register("industry")} error={errors.industry?.message} defaultValue="">
@@ -113,7 +113,7 @@ function Form({ products, defaultType = "general", defaultProduct = "", defaultI
           <Input id="phone" type="tel" autoComplete="tel" {...register("phone")} error={errors.phone?.message} />
         </Field>
       </div>
-      <Field id="message" label="Message" hint="Tell us about the building, the job you have in mind, or anything you want to ask." error={errors.message?.message}>
+      <Field id="message" label="Message" hint="What do staff carry, where does it go and how often? Or simply ask us a question." error={errors.message?.message}>
         <Textarea id="message" {...register("message")} error={errors.message?.message} />
       </Field>
       <ConsentCheckbox id="marketingConsent" wording={CONSENT_WORDING} {...register("marketingConsent")} />

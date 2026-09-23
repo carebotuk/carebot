@@ -10,6 +10,7 @@
   --stone: #dedddb;
   --slate: #6b6a66;
   --accent: #2f5d50;
+  --sage: #edf2ee;
   --alert: #b4552a;
 
   /* Type scale (Bringhurst-style modular scale, ratio ~1.2 / 1.25) */
@@ -35,6 +36,7 @@
   --color-stone: var(--stone);
   --color-slate: var(--slate);
   --color-accent: var(--accent);
+  --color-sage: var(--sage);
   --color-alert: var(--alert);
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;

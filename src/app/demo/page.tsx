@@ -18,10 +18,10 @@ export const metadata: Metadata = pageMetadata({
 
 const expect = [
   "Forty-five minutes, at a time that suits you.",
-  "Two robots on site, working, that you operate yourself.",
+  "Compare FlashBot Max for enclosed deliveries with KettyBot Pro for tray service and reception.",
   "Bring your corridor measurements and a floor plan if you have one. We will run the robot through a scenario like yours.",
-  "Bring the people who will use it. Staff acceptance decides whether a deployment works.",
-  "No sales pitch. If we think it will not work in your building, we say so.",
+  "Bring the people who would use it so they can try the controls and ask their own questions.",
+  "Discuss suitable tasks, staff responsibilities, purchase or lease options and what a site survey would cover.",
 ];
 
 export default async function DemoPage() {
@@ -31,22 +31,22 @@ export default async function DemoPage() {
   return (
     <>
       <JsonLd data={localBusinessJsonLd()} />
-      <Section band="paper">
+      <Section band="sage">
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Book a demo", href: "/demo" }]} />
         <div className="mt-8 grid gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="max-w-2xl">
             <p className="text-slate">Demonstration facility, {d.byAppointment ? "by appointment" : "open weekdays"}</p>
-            <h1 className="mt-3">See a robot working before you decide.</h1>
+            <h1 className="mt-3">Try the robot before you decide.</h1>
             <p className="mt-6 text-(length:--step-1) text-slate">
-              Most people who visit Northfleet have never stood next to a service robot. Forty-five minutes here answers more questions than a month of reading. Two robots on site, working, and you drive them.
+              See FlashBot Max and KettyBot Pro working at our Northfleet facility. Try sending a delivery, see how items are loaded and received, and ask how the robot would fit into your team’s day.
             </p>
-            <p className="mt-4 text-slate">Prefer us to come to you? We will do a site survey at your home, measure your corridors and lift, and give you a written feasibility assessment.</p>
+            <p className="mt-4 text-slate">Prefer us to come to you? We will do a site survey at your premises, measure your corridors and lift, and give you a written feasibility assessment.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="#book">Book a slot</ButtonLink>
               <ButtonLink href="/contact?enquiry=survey" variant="secondary">Request a site survey</ButtonLink>
             </div>
           </div>
-          <div className="rounded-[var(--radius)] border border-stone p-6 sm:p-8">
+          <div className="rounded-3xl border border-stone bg-paper p-6 sm:p-8">
             <h2 className="text-(length:--step-2)">Where</h2>
             <address className="mt-3 not-italic">
               {d.name}<br />
@@ -76,21 +76,21 @@ export default async function DemoPage() {
             </ul>
           </div>
           <div className="aspect-video overflow-hidden rounded-[var(--radius)] bg-ink lg:aspect-auto lg:min-h-80">
-            <VideoLoop src="/video/demo.mp4" poster="/_next/image?url=%2Fvideo%2Fposter.jpg&w=1200&q=75" title="A service robot delivering to a table" />
+            <VideoLoop src="/video/demo.mp4" poster="/video/poster.jpg" title="A service robot delivering to a table" />
           </div>
         </div>
       </Section>
 
-      <Section band="paper" id="book" ariaLabelledBy="book-heading" className="scroll-mt-20">
+      <Section band="sage" id="book" ariaLabelledBy="book-heading" className="scroll-mt-20">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr]">
           <div>
             <h2 id="book-heading">Book your visit</h2>
             <p className="mt-4 text-slate">
-              {cal ? "Pick a time that suits you. You will get a calendar invite with directions." : "Tell us who you are and roughly when suits, and we will confirm a time within one working day."}
+              {cal ? "Pick a time that suits you. You will get a calendar invite with directions." : "Tell us about your business, what you would like the robot to do and when you could visit. We will reply within one working day to arrange a time."}
             </p>
             {site.phone ? <p className="mt-4 text-slate">Or call <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="font-medium text-ink underline-offset-4 hover:underline">{site.phone}</a>.</p> : null}
           </div>
-          <div>
+          <div className="rounded-3xl border border-stone bg-paper p-6 sm:p-8">
             {cal ? (
               <iframe src={`${cal}?embed=true&theme=light`} title="Booking calendar" className="h-[42rem] w-full rounded-[var(--radius)] border border-stone" loading="lazy" />
             ) : (
@@ -100,7 +100,7 @@ export default async function DemoPage() {
         </div>
       </Section>
 
-      <ClosingCta title="Not ready to visit yet?" body="Read the operations director's guide first, or send us a question. We reply within one working day." />
+      <ClosingCta title="Not ready to visit yet?" body="Send us a question about your premises or the job you have in mind. Our team replies within one working day." />
     </>
   );
 }

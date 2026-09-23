@@ -43,7 +43,7 @@ export default async function ResourcePage({ params }: PageProps<"/resources/[sl
           url: absoluteUrl(`/resources/${resource.slug}`),
         }}
       />
-      <Section band="paper">
+      <Section band="sage">
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: resource.title, href: `/resources/${resource.slug}` }]} />
         <div className="mt-8 grid gap-12 lg:grid-cols-[1.2fr_1fr]">
           <div className="max-w-2xl">
@@ -54,7 +54,7 @@ export default async function ResourcePage({ params }: PageProps<"/resources/[sl
             </div>
             <h1 className="mt-5">{resource.title}</h1>
             <p className="mt-6 text-(length:--step-1) text-slate">{resource.summary}</p>
-            <div className="prose mt-10" dangerouslySetInnerHTML={{ __html: resource.html }} />
+            <div className="prose mt-10 rounded-3xl bg-paper p-6 sm:p-8" dangerouslySetInnerHTML={{ __html: resource.html }} />
             {!resource.isGated && resource.asset ? (
               <div className="mt-8"><ButtonLink href={resource.asset} target="_blank" rel="noopener">Download</ButtonLink></div>
             ) : null}
@@ -65,7 +65,7 @@ export default async function ResourcePage({ params }: PageProps<"/resources/[sl
                 resourceSlug={resource.slug}
                 heading={resource.formHeading ?? "Get it by email"}
                 available={available}
-                defaultIndustry={industry?.slug as "care-homes" | "hotels" | "restaurants" | "retail" | undefined}
+                defaultIndustry={industry?.slug as "care-homes" | "hospitals" | "hotels" | "restaurants" | "retail" | undefined}
               />
             </div>
           ) : null}

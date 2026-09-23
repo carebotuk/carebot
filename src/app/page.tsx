@@ -1,133 +1,154 @@
 import type { Metadata } from "next";
-import { getIndustries, getProducts, getResources } from "@/lib/content";
-import { pageMetadata, websiteJsonLd } from "@/lib/seo";
+import Link from "next/link";
+import { getIndustries, getProducts } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { resolveImage } from "@/lib/images";
-import { site } from "@/lib/site";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { ButtonLink } from "@/components/ui/Button";
+import { Arrow, ButtonLink, TextLink } from "@/components/ui/Button";
 import { ImageFrame } from "@/components/ui/ImageFrame";
-import { JsonLd } from "@/components/ui/JsonLd";
-import { ProductCard } from "@/components/site/ProductCard";
-import { IndustryCard } from "@/components/site/IndustryCard";
-import { ResourceCard } from "@/components/site/ResourceCard";
-import { ClosingCta, DemoBlock, SupportStrip, TrustStrip } from "@/components/site/Blocks";
-import { ProductGrid } from "@/components/site/ProductGrid";
+import { VideoLoop } from "@/components/ui/VideoLoop";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Service robots for care homes, hotels and hospitality | Carebot UK",
-  description: site.tagline,
+  title: "Service robots for hotels, restaurants, retail and care | Carebot UK",
+  description: "Put service robots to work in your business. Delivery, table service and reception robots, with UK installation, staff training and ongoing support. Book a demo in Kent.",
   path: "/",
 });
 
-const problems = [
-  { title: "Staff shortages and agency spend", body: "Vacancies stay open for months and agency cover costs a premium on every shift. The people you have are covering for the people you cannot hire." },
-  { title: "Care hours lost to internal transport", body: "Linen to floors, trays to rooms, supplies from stores, waste out. Every trip is time a carer is not with a resident." },
-  { title: "Flat budgets against rising wage cost", body: "Headcount is not going up. The only lever left is what the team you already have spends its time on." },
-];
+const sectors: Record<string, { task: string; description: string }> = {
+  hotels: { task: "Guest deliveries", description: "Move amenities, linen and supplies between floors, with your team focused on the guest experience." },
+  restaurants: { task: "Help with the plate runs", description: "Help carry dishes between the kitchen and dining room, leaving your team more time at the table." },
+  hospitals: { task: "Linen and supply deliveries", description: "Explore routine deliveries between agreed handover points, with routes assessed around your hospital." },
+  retail: { task: "Guidance and promotions", description: "Guide visitors and bring promotions onto the shop floor with a mobile reception and service robot." },
+  "care-homes": { task: "Linen runs and mealtimes", description: "Support routine linen and supply rounds so staff can spend more time with residents." },
+};
+const sectorOrder = ["hotels", "restaurants", "retail", "care-homes", "hospitals"];
 
 const steps = [
-  { n: "1", title: "Survey", body: "We walk your home, measure corridor widths, lift access and floor surfaces, and tell you honestly whether a robot will work." },
-  { n: "2", title: "Specify", body: "We match the robot to the job, not the catalogue." },
-  { n: "3", title: "Deploy", body: "Installation, route mapping, lift and door integration, staff training." },
-  { n: "4", title: "Support", body: "UK-based engineers, response within 24 hours, software updates, spare parts." },
+  { title: "Choose a useful task", body: "Tell us what staff carry, where it goes and how often. We help you identify a suitable robot and a practical starting point." },
+  { title: "Check your premises", body: "We assess the routes, floor surfaces, doors, lifts and charging space, then set out the equipment and installation needed." },
+  { title: "Install and train", body: "We set up the robot and its destinations, then show your staff how to send deliveries, receive them and handle interruptions." },
+  { title: "Keep it working", body: "UK-based engineers, software updates and spare parts. Response within 24 hours for standard faults." },
 ];
 
 export default async function HomePage() {
-  const [products, industries, resources] = await Promise.all([getProducts(), getIndustries(), getResources()]);
-  const northfleet = resolveImage("/images/home/hero.jpg") ?? resolveImage("/images/home/hero.png");
-  const hero = northfleet ?? resolveImage("/images/products/flashbot-max/hero.webp");
-  const heroAlt = northfleet
-    ? "A delivery robot working in a care home corridor, with a member of staff walking past"
-    : "FlashBot Max delivery robot with its two compartments open, loaded with towels and toiletries";
+  const [products, industries] = await Promise.all([getProducts(), getIndustries()]);
+  const orderedIndustries = [...industries].sort((a, b) => sectorOrder.indexOf(a.slug) - sectorOrder.indexOf(b.slug));
+  const featured = products.find((p) => p.slug === "flashbot-max") ?? products[0];
+
   return (
     <>
-      <JsonLd data={websiteJsonLd()} />
-
-      {/* Hero — the one orchestrated motion moment */}
-      <section className="bg-paper pt-14 pb-16 sm:pt-20 sm:pb-24" aria-labelledby="hero-heading">
+      <section className="overflow-hidden bg-sage pt-12 pb-10 sm:pt-20 sm:pb-14" aria-labelledby="hero-heading">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-            <div className="hero-rise max-w-2xl">
-              <p className="text-(length:--step--1) text-slate">Service robots for UK care homes, hotels, restaurants and retail</p>
-              <h1 id="hero-heading" className="mt-4">Give your carers back the hours they spend walking.</h1>
-              <p className="mt-6 text-(length:--step-1) text-slate">
-                Carebot UK supplies, installs and maintains commercial service robots for care homes, hotels, restaurants and retail. UK-based engineers, a demonstration facility in Kent, and support measured in hours.
-              </p>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.12fr_1fr] lg:gap-16">
+            <div className="hero-rise">
+              <p className="flex items-center gap-3 text-sm font-medium text-accent"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent" />Service robots, installed and supported in the UK</p>
+              <h1 id="hero-heading" className="mt-6 max-w-[12ch] text-[clamp(2.75rem,5.4vw,4.75rem)] leading-[1.03] tracking-[-0.045em]">Less carrying.<br /><span className="text-accent">More time for people.</span></h1>
+              <p className="mt-6 max-w-lg text-lg text-slate">When your team is busy carrying dishes, fetching linen or delivering supplies, they have less time for guests, customers and residents. Our robots can help with those repeated journeys.</p>
+              <p className="mt-4 max-w-lg text-slate">Carebot UK supplies Pudu service robots for restaurants, care homes, hospitals, hotels and retail. We help you choose the right model, install it at your premises and support your team as they use it.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/demo">Book a demo</ButtonLink>
-                <ButtonLink href="/products" variant="secondary">See the robots</ButtonLink>
+                <ButtonLink href="/demo">See a robot in action</ButtonLink>
+                <ButtonLink href="#robots" variant="secondary">Explore the robots</ButtonLink>
               </div>
+              <p className="mt-5 text-sm text-slate">Try one at our demonstration facility in Northfleet, Kent.</p>
             </div>
-            <ImageFrame
-              src={hero}
-              alt={heroAlt}
-              aspect="portrait"
-              priority
-              sizes="(min-width: 1024px) 45vw, 100vw"
-              label="Northfleet photography to follow"
-            />
+            {featured ? (
+              <div className="relative rounded-[2rem] bg-white p-5 sm:p-8">
+                <div className="flex items-center justify-between gap-4 text-sm"><span className="rounded-full bg-mist px-3 py-1.5">Meet {featured.name}</span><span className="text-slate">Delivery robot</span></div>
+                <ImageFrame src={resolveImage(featured.heroImage)} alt={featured.heroImageAlt ?? featured.name} aspect="square" priority sizes="(min-width: 1024px) 45vw, 100vw" className="mt-4 bg-white" />
+                <Link href={`/products/${featured.slug}`} className="group mt-4 flex items-center justify-between gap-4 border-t border-stone pt-5 font-medium"><span>See what {featured.name} can deliver</span><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-white"><Arrow /></span></Link>
+              </div>
+            ) : null}
+          </div>
+          <div className="mt-12 grid gap-4 border-t border-accent/20 pt-6 text-sm font-medium text-accent sm:grid-cols-3">
+            <p>Matched to your building and workflow</p><p>Installation and staff training</p><p>Ongoing support from UK engineers</p>
           </div>
         </Container>
       </section>
 
-      <TrustStrip />
+      <Section id="robots" band="mist" ariaLabelledBy="robots-heading" className="scroll-mt-20">
+        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <SectionHeading id="robots-heading" kicker="Find the right fit" title="Meet the robots." lede="Enclosed deliveries around your building, or tray service on the floor? Start with the job, then explore the model that fits." />
+          <div className="mb-10 shrink-0 sm:mb-14"><TextLink href="/products">View all robots</TextLink></div>
+        </div>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {products.map((product) => {
+            return (
+              <article key={product.slug} className="flex flex-col overflow-hidden rounded-3xl bg-white">
+                <div className="relative px-8 pt-8">
+                  <p className="relative z-10 text-sm font-medium text-accent">{product.tagline}</p>
+                  <ImageFrame src={resolveImage(product.heroImage)} alt={product.heroImageAlt ?? product.name} aspect="video" sizes="(min-width: 1024px) 45vw, 100vw" className="mt-3 bg-white" />
+                </div>
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <h3 className="text-3xl">{product.name}</h3>
+                  <p className="mt-4 text-slate">{product.shortDescription}</p>
+                  <div className="mt-auto pt-8"><ButtonLink href={`/products/${product.slug}`} variant="secondary">Explore {product.name}</ButtonLink></div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <p className="mt-6 text-sm text-slate">Purchase and lease options available. Suitability, configuration and pricing confirmed after assessing your requirements.</p>
+      </Section>
 
-      <Section band="paper" ariaLabelledBy="problem-heading">
-        <SectionHeading id="problem-heading" title="The problem is not a shortage of robots. It is a shortage of hours." />
-        <div className="grid gap-8 md:grid-cols-3">
-          {problems.map((p) => (
-            <div key={p.title} className="border-t border-stone pt-6">
-              <h3>{p.title}</h3>
-              <p className="mt-3 text-slate">{p.body}</p>
-            </div>
-          ))}
+      <Section ariaLabelledBy="industries-heading">
+        <SectionHeading id="industries-heading" kicker="Find your sector" title="What would you like help with?" lede="See which robots suit your setting, the jobs they can take on and what we check before installation." />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {orderedIndustries.map((industry, index) => {
+            const sector = sectors[industry.slug];
+            return (
+              <Link key={industry.slug} href={`/industries/${industry.slug}`} className="group flex flex-col rounded-2xl border border-stone bg-paper p-6 transition-colors hover:border-accent hover:bg-sage">
+                <div className="flex items-center justify-between text-sm text-accent"><span>{industry.shortName ?? industry.name}</span><span aria-hidden="true">0{index + 1}</span></div>
+                <h3 className="mt-8">{sector?.task ?? industry.headline}</h3>
+                <p className="mt-4 text-sm text-slate">{sector?.description ?? industry.intro}</p>
+                <span className="mt-auto flex items-center gap-3 pt-8 text-sm font-medium">See robots for this sector <Arrow /></span>
+              </Link>
+            );
+          })}
         </div>
       </Section>
 
-      <Section band="mist" ariaLabelledBy="how-heading">
-        <SectionHeading id="how-heading" title="What we do" lede="Anyone can sell you a robot. The work is in what happens after it arrives." />
-        <ol className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {steps.map((s) => (
-            <li key={s.n} className="rounded-[var(--radius)] bg-paper p-6">
-              <span className="font-serif text-(length:--step-4) leading-none text-accent">{s.n}</span>
-              <h3 className="mt-4">{s.title}</h3>
-              <p className="mt-2 text-slate">{s.body}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-10">
-          <SupportStrip />
-        </div>
-      </Section>
-
-      <Section band="paper" ariaLabelledBy="robots-heading">
-        <SectionHeading id="robots-heading" title="The robots" lede="Shown in the context of the job they do, not a spec catalogue. Filter by where you would use one." />
-        <ProductGrid
-          items={products.map((p, idx) => ({ slug: p.slug, industries: p.industries, card: <ProductCard product={p} priority={idx < 3} /> }))}
-          industries={industries.map((i) => ({ slug: i.slug, name: i.name }))}
-        />
-      </Section>
-
-      <DemoBlock />
-
-      <Section band="paper" ariaLabelledBy="industries-heading">
-        <SectionHeading id="industries-heading" title="Where they work" />
-        <div className="grid gap-6 md:grid-cols-2">
-          {industries.map((i) => <IndustryCard key={i.slug} industry={i} />)}
-        </div>
-      </Section>
-
-      {resources.length ? (
-        <Section band="mist" ariaLabelledBy="resources-heading">
-          <SectionHeading id="resources-heading" title="Guides for operations directors" lede="Written for the person who has been asked to look into this and needs a straight answer." />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {resources.slice(0, 3).map((r) => <ResourceCard key={r.slug} resource={r} />)}
+      <Section ariaLabelledBy="deployment-heading">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+          <div>
+            <p className="text-sm font-medium text-accent">What Carebot UK does for you</p>
+            <h2 id="deployment-heading" className="mt-4">From choosing a robot to using it every day.</h2>
+            <p className="mt-5 text-lg text-slate">You get a UK partner for the whole installation. We assess the work and your premises, set up the robot, train your staff and provide ongoing engineering support.</p>
+            <div className="mt-7"><TextLink href="/services">How deployment and support work</TextLink></div>
           </div>
-        </Section>
-      ) : null}
+          <ol className="grid gap-x-8 gap-y-10 sm:grid-cols-2">
+            {steps.map((step, index) => (
+              <li key={step.title} className="border-t border-stone pt-5">
+                <span className="text-sm font-medium text-accent">0{index + 1}</span>
+                <h3 className="mt-3">{step.title}</h3>
+                <p className="mt-3 text-slate">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </Section>
 
-      <ClosingCta />
+      <section className="bg-accent py-16 text-white sm:py-24" aria-labelledby="demo-heading">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p className="text-sm text-white/75">See the robots before you decide</p>
+              <h2 id="demo-heading" className="mt-4 text-4xl sm:text-5xl">Bring us a task.<br />Try the robot.</h2>
+              <p className="mt-6 text-lg text-white/85">Could it carry your meal trays? Would it help with linen runs? Visit our Northfleet demonstration facility, try the controls and discuss the work you need done.</p>
+              <p className="mt-4 text-white/85">A floor plan or a few photos can help, but you can start with a conversation. We will explain which model to consider and what we need to assess at your premises.</p>
+              <div className="mt-8 flex flex-col gap-4 sm:items-start">
+                <ButtonLink href="/demo" variant="inverse">Book your demo</ButtonLink>
+                <Link href="/contact?enquiry=survey" className="text-sm underline underline-offset-4 hover:text-white/75">Prefer a visit to your premises? Request a site survey</Link>
+              </div>
+              <p className="mt-6 text-sm text-white/70">Northfleet, Kent · By appointment</p>
+            </div>
+            <div>
+              <div className="aspect-video overflow-hidden rounded-2xl bg-ink"><VideoLoop src="/video/demo.mp4" poster="/video/poster.jpg" title="A service robot delivering to a table" /></div>
+              <p className="mt-4 text-sm text-white/75">See service robotics in motion.</p>
+            </div>
+          </div>
+        </Container>
+      </section>
     </>
   );
 }

@@ -1,8 +1,8 @@
 ---
 name: "Specification and procurement"
 slug: "specification"
-summary: "We match the robot to the job, not the catalogue, and handle import, conformity and delivery."
+summary: "Get a recommendation for the robot, configuration and installation your job needs."
 displayOrder: 2
 ---
 
-Once the survey is done we specify the unit and configuration for the job, including compartment or tray count and any options. We handle the manufacturer order, UK import, UKCA/CE conformity documentation and delivery to site.
+Following the survey, we recommend the equipment and configuration for your tasks. We set out the installation requirements and handle ordering, import documentation and delivery. You can review the proposed setup before committing to it.

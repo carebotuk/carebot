@@ -17,12 +17,13 @@ export default async function ContactPage() {
   const products = await getProducts();
   return (
     <>
-      <Section band="paper">
+      <Section band="sage">
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
         <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
-            <h1>Get in touch</h1>
-            <p className="mt-5 text-(length:--step-1) text-slate">The fastest way to a decision is a demo at Northfleet. For anything else, the form is read by a person and answered within one working day.</p>
+            <p className="mb-4 text-sm font-medium text-accent">Advice, demos and pricing</p>
+            <h1>Tell us where your team needs a hand.</h1>
+            <p className="mt-5 text-(length:--step-1) text-slate">A linen run between floors? Plates from the kitchen? Guest deliveries? Tell us what you want help with and a little about your premises. We will discuss the relevant robot and what we need to assess before quoting. Our team replies within one working day.</p>
             <div className="mt-8"><ButtonLink href="/demo">Book a demo</ButtonLink></div>
 
             <dl className="mt-12 space-y-6 text-slate">
@@ -50,7 +51,7 @@ export default async function ContactPage() {
               </div>
             </dl>
           </div>
-          <div className="rounded-[var(--radius)] border border-stone p-6 sm:p-8">
+          <div className="rounded-3xl border border-stone bg-paper p-6 sm:p-8">
             <EnquiryForm products={products.map((p) => ({ slug: p.slug, name: p.name }))} readQuery />
           </div>
         </div>

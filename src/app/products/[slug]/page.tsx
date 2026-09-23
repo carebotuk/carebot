@@ -64,19 +64,19 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   return (
     <>
       <JsonLd data={jsonLd} />
-      <Section band="paper" className="pb-10">
+      <Section band="sage" className="pb-10">
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Products", href: "/products" }, { name: product.name, href: `/products/${product.slug}` }]} />
         <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center">
-          <ImageFrame src={hero} alt={product.heroImageAlt ?? product.name} aspect="square" priority sizes="(min-width: 1024px) 50vw, 100vw" label="Product photography to follow" />
+          <ImageFrame src={hero} alt={product.heroImageAlt ?? product.name} aspect="square" priority sizes="(min-width: 1024px) 50vw, 100vw" className="rounded-[2rem] bg-paper p-4" label="Product photography to follow" />
           <div>
-            <p className="text-slate">{manufacturerName(product.manufacturer)}</p>
+            <p className="text-sm font-medium text-accent">{manufacturerName(product.manufacturer)}</p>
             <h1 className="mt-2">{product.name}</h1>
             <p className="mt-4 text-(length:--step-2) text-slate">{product.tagline}</p>
             <div className="mt-5 flex flex-wrap gap-2">
               <Chip>{categoryLabels[product.category]}</Chip>
               {product.status === "coming-soon" ? <Chip tone="accent">Coming soon</Chip> : null}
               <Chip>Buy or lease</Chip>
-              <Chip>24-hour UK support</Chip>
+              <Chip>UK engineering support</Chip>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={`/demo?product=${product.slug}`}>Book a demo</ButtonLink>
@@ -90,7 +90,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
         </div>
       </Section>
 
-      <Section band="paper" className="pt-0 sm:pt-0">
+      <Section band="paper">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
           <div className="prose" dangerouslySetInnerHTML={{ __html: product.html }} />
           <div className="space-y-6">
@@ -105,7 +105,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
       </Section>
 
       <Section band="mist" ariaLabelledBy="benefits-heading">
-        <h2 id="benefits-heading" className="mb-10">Why it works</h2>
+        <h2 id="benefits-heading" className="mb-10">How it helps your team</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {product.keyBenefits.map((b) => (
             <div key={b.title} className="border-t border-stone pt-5">
@@ -145,7 +145,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
 
       {product.useCases.length ? (
         <Section band="mist" ariaLabelledBy="usecases-heading">
-          <h2 id="usecases-heading" className="mb-10">Jobs it does</h2>
+          <h2 id="usecases-heading" className="mb-10">Jobs to consider first</h2>
           <div className="grid gap-8 md:grid-cols-3">
             {product.useCases.map((u) => (
               <div key={u.title} className="rounded-[var(--radius)] bg-paper p-6">
@@ -171,7 +171,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
           <div className="max-w-3xl rounded-[var(--radius)] border border-stone p-6">
             <p className="font-medium">Being verified against the official {manufacturerName(product.manufacturer)} datasheet.</p>
             <p className="mt-2 text-slate">
-              We publish six to eight decision-relevant figures per robot, such as payload, runtime, minimum corridor width and lift capability, and only once they are confirmed by the manufacturer. Reseller figures for this model conflict, so we are not publishing them. Ask us and we will send what we can stand behind.
+              Ask us about load capacity, dimensions, runtime and the space this robot needs. We will confirm the current manufacturer information and assess it against your proposed use before quotation.
             </p>
             <div className="mt-5">
               <ButtonLink href={`/contact?enquiry=general&product=${product.slug}`} variant="secondary" size="sm">Ask for specifications</ButtonLink>
@@ -210,7 +210,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
         </Section>
       ) : null}
 
-      <ClosingCta title={`See ${product.name} working before you decide.`} />
+      <ClosingCta title={`Could ${product.name} help your team?`} body="Tell us what you need to carry and where it needs to go. We will discuss suitability, demonstrate the robot and explain the steps towards a quotation." />
     </>
   );
 }

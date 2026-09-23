@@ -28,7 +28,7 @@ export function ResourceRequestForm({ resourceSlug, heading, available, defaultI
 
   if (status === "sent") {
     return (
-      <div role="status" className="rounded-[var(--radius)] border border-stone bg-paper p-6">
+      <div role="status" className="rounded-3xl border border-stone bg-paper p-6">
         <h3>{available ? "Check your inbox." : "You are on the list."}</h3>
         <p className="mt-2 text-slate">
           {available
@@ -40,7 +40,7 @@ export function ResourceRequestForm({ resourceSlug, heading, available, defaultI
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="relative space-y-5 rounded-[var(--radius)] border border-stone bg-paper p-6 sm:p-8">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="relative space-y-5 rounded-3xl border border-stone bg-paper p-6 sm:p-8">
       <Honeypot register={() => register("website")} />
       <input type="hidden" {...register("resourceSlug")} />
       <h2 className="text-(length:--step-2)">{heading}</h2>

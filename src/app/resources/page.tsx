@@ -8,7 +8,7 @@ import { ClosingCta } from "@/components/site/Blocks";
 
 export const metadata: Metadata = pageMetadata({
   title: "Resources | Guides and checklists for care and hospitality operators",
-  description: "Practical guides, deployment checklists and, as they land, real UK case studies on service robots. Written for operations directors and registered managers, not engineers.",
+  description: "Guides and checklists to help business owners and managers assess service robots, prepare their premises and ask the right questions.",
   path: "/resources",
 });
 
@@ -16,16 +16,17 @@ export default async function ResourcesPage() {
   const resources = await getResources();
   return (
     <>
-      <Section band="paper" className="pb-8 sm:pb-12">
+      <Section band="sage" className="pb-8 sm:pb-12">
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }]} />
         <div className="mt-8 max-w-3xl">
-          <h1>Resources</h1>
+          <p className="mb-4 text-sm font-medium text-accent">Plan your next step</p>
+          <h1>What to know before buying a robot.</h1>
           <p className="mt-5 text-(length:--step-1) text-slate">
-            Written for the person who has been asked to look into robots and needs a straight answer. No case studies until we have a real one to show you.
+            Compare the jobs a robot can do, understand the building requirements and prepare your questions about cost and support. Our guides are being prepared; register your interest or contact us for advice now.
           </p>
         </div>
       </Section>
-      <Section band="paper" className="pt-0 sm:pt-0">
+      <Section band="sage" className="pt-0 sm:pt-0">
         {resources.length ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((r) => <ResourceCard key={r.slug} resource={r} />)}

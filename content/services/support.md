@@ -1,8 +1,8 @@
 ---
 name: "After-sales support"
 slug: "support"
-summary: "UK-based engineers. Response within 24 hours for standard faults. Spare parts held in the UK."
+summary: "A UK team to contact when you need help, with spare parts held locally."
 displayOrder: 6
 ---
 
-We employ a full-time robotics engineer in the UK. Standard faults get a response within 24 hours. Emergency response is prioritised, and the definition of an emergency, hours of cover and what is bundled in a lease are set out in writing at quotation. We hold spare parts here, not overseas.
+Carebot UK provides a response within 24 hours for standard faults. Our UK-based robotics engineer handles support and maintenance. Your quotation sets out hours of cover, emergency arrangements and what is included, so you can plan for interruptions.

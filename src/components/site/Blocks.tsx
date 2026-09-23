@@ -7,11 +7,11 @@ import { VideoLoop } from "@/components/ui/VideoLoop";
 /** The 24-hour UK response commitment. Appears on home, every product page and the footer. */
 export function SupportStrip() {
   return (
-    <div className="rounded-[var(--radius)] border border-stone bg-paper p-6 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
+    <div className="rounded-3xl border border-accent/15 bg-sage p-6 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
       <div>
-        <p className="text-(length:--step-2) font-semibold tracking-tight">Response within 24 hours. From an engineer in the UK.</p>
+        <p className="text-(length:--step-2) font-semibold tracking-tight">When you need help, call your UK support team.</p>
         <p className="mt-2 max-w-2xl text-slate">
-          We employ a full-time robotics engineer who installs and maintains every machine we sell, and we hold spare parts here. Standard faults are answered within 24 hours. That is the difference between a UK partner and an overseas reseller.
+          Our UK-based robotics engineer handles installation and maintenance, with spare parts held locally. We respond within 24 hours for standard faults; hours of cover and emergency arrangements are confirmed at quotation.
         </p>
       </div>
       <div className="mt-5 shrink-0 sm:mt-0">
@@ -36,20 +36,20 @@ export function TrustStrip() {
   );
 }
 
-export function DemoBlock({ band = "ink" }: { band?: "ink" | "mist" }) {
+export function DemoBlock({ band = "green" }: { band?: "green" | "ink" | "mist" }) {
   const d = site.demoFacility;
-  const inverse = band === "ink";
+  const inverse = band === "ink" || band === "green";
   return (
     <Section band={band} ariaLabelledBy="demo-heading">
       <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
         <div className="overflow-hidden rounded-[var(--radius)] bg-ink aspect-video">
-          <VideoLoop src="/video/demo.mp4" poster="/_next/image?url=%2Fvideo%2Fposter.jpg&w=1200&q=75" title="A service robot delivering to a table" />
+          <VideoLoop src="/video/demo.mp4" poster="/video/poster.jpg" title="A service robot delivering to a table" />
         </div>
         <div>
           <p className={`text-(length:--step--1) ${inverse ? "text-stone" : "text-slate"}`}>Demonstration facility, Kent</p>
-          <h2 id="demo-heading" className="mt-3">See a robot working before you decide.</h2>
+          <h2 id="demo-heading" className="mt-3">See how the robot handles your kind of work.</h2>
           <p className={`mt-5 text-(length:--step-1) ${inverse ? "text-paper/85" : "text-slate"}`}>
-            Two robots on site at {d.line1}, {d.city}, that you can operate yourself. Forty-five minutes, {d.byAppointment ? "by appointment" : "open weekdays"}. Bring your corridor measurements and we will run the robot through a scenario like yours.
+            Try a robot at our {d.city} demonstration facility. Tell us about your meal service, linen runs or guest deliveries. We will show you the relevant model and explain what your premises and team would need.
           </p>
           <p className={`mt-4 ${inverse ? "text-paper/85" : "text-slate"}`}>Or we will come to you for a site survey.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -65,15 +65,15 @@ export function DemoBlock({ band = "ink" }: { band?: "ink" | "mist" }) {
   );
 }
 
-export function ClosingCta({ title = "Talk to someone who will come and measure your corridors.", body = "A booked demo at Northfleet or a site survey at your home is the best next step. No obligation, and we will tell you if it will not work." }: { title?: string; body?: string }) {
+export function ClosingCta({ title = "Which task would you like help with?", body = "Tell us what your team carries, where it goes and how often. We will help you identify the relevant robot and explain the next steps. You do not need to have chosen a model." }: { title?: string; body?: string }) {
   return (
-    <Section band="mist" ariaLabelledBy="closing-heading">
+    <Section band="green" ariaLabelledBy="closing-heading">
       <div className="max-w-3xl">
         <h2 id="closing-heading">{title}</h2>
-        <p className="mt-5 text-(length:--step-1) text-slate">{body}</p>
+        <p className="mt-5 text-(length:--step-1) text-paper/85">{body}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="/demo">Book a demo</ButtonLink>
-          <ButtonLink href="/contact" variant="secondary">General enquiry</ButtonLink>
+          <ButtonLink href="/demo" variant="inverse">Book a demo</ButtonLink>
+          <ButtonLink href="/contact" variant="secondary">Talk to our team</ButtonLink>
         </div>
       </div>
     </Section>
@@ -83,17 +83,17 @@ export function ClosingCta({ title = "Talk to someone who will come and measure 
 export function PurchaseOrLease() {
   const l = site.lease;
   return (
-    <div className="rounded-[var(--radius)] bg-mist p-6 sm:p-8">
-      <h2 className="text-(length:--step-3)">Buy it or lease it.</h2>
+    <div className="rounded-3xl bg-sage p-6 sm:p-8">
+      <h2 className="text-(length:--step-3)">Purchase or monthly lease</h2>
       <p className="mt-3 text-slate">
-        Outright purchase, or a monthly lease that spreads the cost{l.supportIncluded ? " and includes support" : ""}. Most care operators start with a lease on one unit.
+        Outright purchase, or a monthly lease that spreads the cost{l.supportIncluded ? " and includes support" : ""}. We will help you compare the options for your business.
       </p>
       {l.fromMonthly ? (
         <p className="mt-4 font-serif text-(length:--step-3)">
           From {l.fromMonthly} per month{l.minimumTermMonths ? `, ${l.minimumTermMonths}-month minimum` : ""}.
         </p>
       ) : (
-        <p className="mt-4 text-(length:--step--1) text-slate">Lease terms and indicative monthly pricing confirmed in writing at quotation.</p>
+        <p className="mt-4 text-(length:--step--1) text-slate">The cost depends on the robot, configuration and installation work. We confirm the equipment, support and lease terms in a written quotation.</p>
       )}
       <div className="mt-6">
         <ButtonLink href="/contact?enquiry=pricing" variant="secondary" size="sm">Ask about pricing</ButtonLink>

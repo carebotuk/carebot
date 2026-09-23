@@ -2,42 +2,47 @@
 name: "Restaurants and hospitality"
 slug: "restaurants"
 shortName: "Restaurants"
-headline: "Run more tables with the team you have."
-intro: "Tray-delivery robots that carry plates from pass to table and clear on the way back. The most widely deployed service robot use case in the world."
+headline: "Let a robot carry the plates. Let your team look after the guests."
+intro: "KettyBot Pro helps with the repeated journeys between kitchen and dining room. Your team stays in charge of service, with Carebot UK handling setup, training and support."
 heroImage: ""
 heroImageAlt: ""
 recommendedProducts: ["kettybot-pro"]
 outcomes: []
 relatedCaseStudies: []
 faqs:
-  - question: "Do our aisles need to be a certain width?"
-    answer: "Yes. KettyBot Pro needs a minimum clear aisle between tables, and we will confirm the exact figure from the official datasheet and measure your floor at the survey."
   - question: "Does it replace waiting staff?"
-    answer: "No. It carries the plates. Your team takes the order, presents the food and talks to the guest. The robot does the walk to the pass and back."
-  - question: "Can the screen show our promotions?"
-    answer: "Yes. The front display can carry menus, offers and greetings, and we set this up during deployment."
+    answer: "The robot carries trays. Your team takes orders, places dishes on tables, clears dishes onto the robot and looks after guests. The aim is to reduce repeated carrying trips during service."
+  - question: "Will it work when the restaurant is busy?"
+    answer: "We assess routes with your working layout in mind: occupied chairs, staff moving around, service stations and pinch points. Clearances and floor conditions determine whether it is a useful fit."
+  - question: "Can the screen show menus or offers?"
+    answer: "Yes. The front display can show greetings, menus and promotional content. We set this up and show your team how to update it."
 seo:
   title: "Restaurant service robots UK | Carebot UK"
-  description: "Tray delivery robots for UK restaurants and hospitality venues. Proven worldwide, supplied and supported here by Carebot UK. Book a demo in Kent."
+  description: "Explore KettyBot Pro for restaurant tray delivery. See how staff use it, what your layout needs and how Carebot UK handles installation and support."
 status: "live"
 displayOrder: 3
 ---
 
-## The problem
+## The journey from the pass adds up
 
-Front-of-house teams are stretched, turnover is high, and every plate run to the far table is a minute the server is not taking an order or turning a table.
+When service is busy, every trip across the dining room is time a member of staff cannot spend taking an order, checking on a table or welcoming the next guest.
 
-## How robotics helps
+KettyBot Pro carries loaded trays between the kitchen and mapped service points. Staff take the dishes off and serve them. They can load used dishes for a return journey, too. The robot helps with transport while your team delivers the hospitality.
 
-This is the use case service robots were built for and where the technology is most proven. Pudu's tray robots have run tens of thousands of restaurant floors worldwide. KettyBot Pro takes plates from the pass to the table and clears on the return, and its front screen carries the specials and a greeting at the door.
+## Meet KettyBot Pro
 
-## What deployment looks like in a restaurant
+This Pudu Robotics model combines tray delivery with a front display for greetings, menus or offers. For a restaurant, the first question is how much carrying it could take on during a busy service.
 
-- **Aisle widths** decide whether it works. We measure before we quote.
-- **Floor surface and thresholds** matter more than people expect. We check them.
-- **Service flow.** We map pass-to-table routes with your floor manager and configure table positions.
-- **Training** takes an hour, and the robot is in service the same day.
+We will look at the distance from the pass, the loads you carry, your busiest periods and where staff would meet the robot. A clear, repeatable route gives us something practical to assess.
 
-## What we will not claim
+## Your floor plan matters
 
-We will not put a turnover figure on this page without a UK deployment behind it. Come and see one run at our Kent facility.
+A route that is clear before opening can look very different with guests seated. We check aisle widths, chairs, turns, thresholds and the kitchen handover point with your floor manager.
+
+Carebot UK installs the robot, maps the destinations and trains your staff to send deliveries and handle interruptions. We agree support arrangements so you know who to call after installation.
+
+## Try it before planning your installation
+
+Bring a floor plan or a few photos to a demonstration at Northfleet. See KettyBot Pro carry trays, try the controls and talk through how it could fit your service.
+
+[Book a restaurant demo](/demo?product=kettybot-pro&industry=restaurants) or [ask about your layout](/contact?enquiry=survey&industry=restaurants).

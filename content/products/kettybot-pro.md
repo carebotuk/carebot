@@ -3,24 +3,24 @@ name: "KettyBot Pro"
 slug: "kettybot-pro"
 manufacturer: "pudu-robotics"
 category: "reception"
-tagline: "Serves, greets and promotes. On one chassis."
+tagline: "Carry the plates. Give your team more time at the table."
 heroImage: "/images/products/kettybot-pro/hero.png"
 heroImageAlt: "Pudu KettyBot Pro service robot with trays and a front display screen, on a plain background"
 gallery: []
 videoUrl: ""
-shortDescription: "A compact tray-delivery and reception robot with a large front screen. Runs tables in dining rooms, greets at reception and carries promotions in retail."
+shortDescription: "A tray-delivery and reception robot for restaurants, care-home dining rooms, hotels and retail. Carry dishes, guide visitors and display greetings or offers."
 keyBenefits:
-  - title: "Narrow aisles"
-    description: "A compact chassis built for dining rooms and shop floors where space is tight."
-    icon: "route"
-  - title: "Screen that earns its keep"
-    description: "The front display greets, guides and promotes. In hospitality and retail that is a second return on the same unit."
-    icon: "screen"
-  - title: "Open trays for quick service"
-    description: "Load, tap the table or destination, and it goes. Staff stay with residents or guests."
+  - title: "Help with the carrying"
+    description: "Send loaded trays between the kitchen and agreed service points. Staff remain responsible for loading, unloading and serving."
     icon: "tray"
-  - title: "Self-charging"
-    description: "Returns to its dock between services and charges itself."
+  - title: "More than a delivery route"
+    description: "Use the front display for greetings, directions or offers alongside the robot’s delivery role."
+    icon: "screen"
+  - title: "A fit for your floor layout"
+    description: "We check the space between tables or displays and plan routes around how your business operates."
+    icon: "route"
+  - title: "Automatic charging"
+    description: "The robot can return to its charging dock between tasks. We help you choose a suitable dock location."
     icon: "battery"
 specsStatus: "indicative"
 specsSource: ""
@@ -44,21 +44,25 @@ specs:
     value: "18.5 inch front screen"
     source: "Indicative, third-party reseller listings. Pending official Pudu datasheet."
 options: []
-industries: ["care-homes", "restaurants", "retail", "hotels"]
+industries: ["care-homes", "hospitals", "restaurants", "retail", "hotels"]
 useCases:
-  - title: "Dining room service"
-    description: "Runs plated meals and clears tables so carers and serving staff stay with residents at mealtimes."
-  - title: "Reception and wayfinding"
-    description: "Greets visitors, shows directions on screen and can escort them to a room or department."
-  - title: "In-store promotion"
-    description: "Carries the offer of the day on screen while moving stock or samples around the floor."
+  - title: "Restaurant service"
+    description: "Carry dishes from the kitchen to mapped service points. Your team takes orders, places dishes and looks after guests."
+  - title: "Care-home dining rooms"
+    description: "Support meal deliveries and return trips with used dishes loaded by staff, while carers assist residents at the table."
+  - title: "Reception and retail"
+    description: "Display a welcome or promotion and guide visitors along configured routes. Your team handles questions and personal assistance."
 availability: "both"
 datasheet: ""
 faqs:
-  - question: "Is it suitable for a care home dining room?"
-    answer: "Yes, provided aisles between tables are wide enough. We measure this at the survey. Many operators start with one unit at the busiest mealtime."
+  - question: "Does it serve food or clear tables itself?"
+    answer: "It carries trays. Staff load the robot, take dishes off and place used dishes on it for the return journey. It does not lift plates from tables or replace the personal service your team provides."
+  - question: "Will it fit between our tables?"
+    answer: "We need to assess the clear space with chairs occupied, as well as turns, thresholds and busy service points. We check your layout against the manufacturer’s requirements before recommending it."
   - question: "Can we change what the screen shows?"
-    answer: "Yes. Greetings, wayfinding and promotional content are managed through Pudu's software, and we set it up and train your team as part of deployment."
+    answer: "Yes. Your team can manage greetings and promotional content through the manufacturer’s software. We cover this during setup and training."
+  - question: "How do we decide whether it is worth it?"
+    answer: "Start with the busiest repeat journeys in your service. Tell us what staff carry, how often they make the trip and where delays occur. A demonstration and site assessment help establish whether the robot would be useful."
 seo:
   title: "KettyBot Pro UK | Tray delivery and reception robot"
   description: "KettyBot Pro from Pudu Robotics, supplied and supported in the UK by Carebot UK. Dining service, reception and in-store promotion. Book a demo in Kent."
@@ -66,8 +70,20 @@ status: "available"
 displayOrder: 2
 ---
 
-KettyBot Pro is the robot most people have already seen working. It is the most widely deployed service robot use case globally, running tables in restaurants and greeting at hotel reception. In a care home it does the same job at mealtimes and at the front door.
+## Keep your team close to the people they serve
 
-It carries open trays for quick service, and its front screen greets visitors, shows wayfinding and carries promotions. In hospitality and retail that screen is a second return on the same unit.
+During a busy service, the walk between kitchen and table happens again and again. KettyBot Pro carries the trays on that journey, giving your team an extra pair of wheels for the carrying.
 
-Specifications for KettyBot Pro are being verified against the official Pudu datasheet before we publish them. Reseller figures conflict, and we will not publish a number we cannot stand behind.
+Staff load the robot and choose a mapped destination. At the service point, your team takes off the dishes and serves the guest or resident. Used dishes can be loaded for a return trip. Your people still take orders, present food and provide assistance.
+
+## Choose it for table service, reception or retail
+
+KettyBot Pro combines open trays with a front-facing screen. In a restaurant or care-home dining room, its main job can be carrying dishes. In a hotel reception or shop, it can display greetings and promotions and guide visitors along configured routes.
+
+The best fit depends on your layout and the work you want it to do. We assess aisle widths, turns and service points with your team, including how the space changes when it is busy.
+
+## Try it with your service in mind
+
+Carebot UK handles site assessment, installation, route mapping, training and ongoing UK support. Purchase and lease options are available.
+
+[Book a KettyBot Pro demonstration](/demo?product=kettybot-pro). Tell us about your dining room or shop floor, and we will help you assess where it could be useful.

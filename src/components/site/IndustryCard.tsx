@@ -4,7 +4,7 @@ import { Arrow } from "@/components/ui/Button";
 
 export function IndustryCard({ industry }: { industry: Industry }) {
   return (
-    <Link href={`/industries/${industry.slug}`} className="group flex h-full flex-col justify-between rounded-[var(--radius)] border border-stone bg-paper p-6 transition-colors hover:border-ink">
+    <Link href={`/industries/${industry.slug}`} className="group flex h-full flex-col justify-between rounded-3xl border border-stone bg-paper p-6 transition-colors hover:border-accent hover:bg-sage">
       <div>
         <h3>{industry.name}</h3>
         <p className="mt-3 text-slate">{industry.intro}</p>
